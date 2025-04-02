@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Player</title>
+</head>
+<body>
+    <h1>Music Player</h1>
+    <ul>
+        {% for song in songs %}
+        <li>
+            {{ song.title }} - {{ song.artist }}
+            <button onclick="playSong({{ song.id }})">Play</button>
+        </li>
+        {% endfor %}
+    </ul>
+    <audio controls id="audioPlayer"></audio>
+    <script>
+        function playSong(songId) {
+            fetch(`/play/${songId}/`).then(response => response.json()).then(data => {
+                document.getElementById('audioPlayer').src = data.url;
+                document.getElementById('audioPlayer').play();
+            });
+        }
+    </script>
+</body>
+</html>

@@ -22,3 +22,5 @@ def index(request):
             data = {"city": city, "temperature": "Not Found"}
 
     return render(request, "index.html", {"data": data})
+
+##some changes

@@ -1,42 +1,58 @@
-#root {
-  max-width: 1280px;
+.app {
+  max-width: 600px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.chat-box {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #f0f0f0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.msg {
+  padding: 10px 14px;
+  margin: 8px 0;
+  border-radius: 12px;
+  max-width: 80%;
+  word-wrap: break-word;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.msg.user {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
 }
 
-.card {
-  padding: 2em;
+.msg.ai {
+  background-color: #e5e5ea;
+  color: black;
+  align-self: flex-start;
 }
 
-.read-the-docs {
-  color: #888;
+.input-box {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+}
+
+.input-box button {
+  margin-left: 8px;
+  padding: 10px 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }

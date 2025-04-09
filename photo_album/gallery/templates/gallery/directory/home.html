@@ -1,0 +1,12 @@
+<h1>Photo Album</h1>
+<a href="{% url 'upload' %}">Upload New Photo</a>
+<ul>
+  {% for photo in photos %}
+    <li>
+      <a href="{% url 'detail' photo.pk %}">
+        <img src="{{ photo.image.url }}" width="200" />
+        <p>{{ photo.title }}</p>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
